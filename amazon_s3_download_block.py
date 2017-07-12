@@ -11,15 +11,18 @@ class AmazonS3(AmazonBase):
     creds = ObjectProperty(
         AWSCreds, title="AWS Credentials", default=AWSCreds())
 
-    file_name = StringProperty(title="S3 File Name", default="")
-    key = StringProperty(title="S3 File Key", default="")
+    # Bucket in which file is stored
     bucket_name = StringProperty(title="Bucket Name", default="bucket")
+    # Name of file in bucket
+    key = StringProperty(title="S3 File Key", default="")
+    # File to write to on local machine
+    file_name = StringProperty(title="S3 File Name", default="")
 
     def process_signals(self, signals):
         for signal in signals:
             try:
                 self.logger.debug("Downloading {} from the {} bucket".format(
-                    self.file_name(signal), self.bucket_name(signal)))
+                    self.key(signal), self.bucket_name(signal)))
                 self.client.download_file(
                     self.bucket_name(signal),
                     self.key(signal),
@@ -27,3 +30,5 @@ class AmazonS3(AmazonBase):
             except:
                 self.logger.exception("File download failed")
         # self.notify_signals
+
+    # Once file is downloaded, then what?
