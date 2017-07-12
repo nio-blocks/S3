@@ -1,7 +1,7 @@
 from nio.block.terminals import DEFAULT_TERMINAL
 from nio.signal.base import Signal
 from nio.testing.block_test_case import NIOBlockTestCase
-from ..example_block import Example
+from ..amazon_base_block import Example
 
 
 class TestExample(NIOBlockTestCase):
