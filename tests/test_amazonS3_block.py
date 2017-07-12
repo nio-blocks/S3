@@ -13,17 +13,17 @@ class TestAmazonS3(NIOBlockTestCase):
     def test_upload_file(self):
         """Signals pass through block unmodified."""
         blk = AmazonS3Upload()
-        self.configure_block(blk, {})
+        self.configure_block(blk, {"file_name": "{{ $file_name }}"})
         blk.start()
         with patch.object(blk, "client") as patched_client:
             blk.process_signals([Signal({
-                "file_name": "/path/to/filename.css",
+                "file_name": "etc/testupload.txt",
                 "bucket_name": "bucket.n.io",
                 "key": "filename.css",
             })])
 
             patched_client.upload_file.assert_called_once_with(
-                "/path/to/filename.css",
+                "etc/testupload.txt",
                 "bucket.n.io",
                 "filename.css")
 
@@ -33,11 +33,11 @@ class TestAmazonS3(NIOBlockTestCase):
     def test_download_file(self):
         """Signals pass through block unmodified."""
         blk = AmazonS3Download()
-        self.configure_block(blk, {})
+        self.configure_block(blk, {"file_name": "{{ $file_name }}"})
         blk.start()
         with patch.object(blk, "client") as patched_client:
             blk.process_signals([Signal({
-                "file_name": "/path/to/filename.css",
+                "file_name": "etc/testdownload.txt",
                 "bucket_name": "bucket.n.io",
                 "key": "filename.css",
             })])
@@ -45,7 +45,7 @@ class TestAmazonS3(NIOBlockTestCase):
             patched_client.download_file.assert_called_once_with(
                 "bucket.n.io",
                 "filename.css",
-                "/path/to/filename.css")
+                "etc/testdownload.txt")
 
         blk.stop()
         self.assert_num_signals_notified(0)
