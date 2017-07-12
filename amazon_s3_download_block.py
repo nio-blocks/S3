@@ -21,12 +21,15 @@ class AmazonS3Download(Block):
     creds = ObjectProperty(
         AWSCreds, title="AWS Credentials", default=AWSCreds())
 
-    # Bucket in which file is stored
-    bucket_name = StringProperty(title="Bucket Name", default="")
-    # Name of file in bucket
-    key = StringProperty(title="S3 File Key", default="")
-    # File to write to on local machine
-    file_name = StringProperty(title="Download Location for File", default="")
+    # S3 bucket to upload to
+    bucket_name = StringProperty(
+        title="Bucket Name", default="{{ $bucket_name }}")
+    # What to name file in S3 bucket
+    key = StringProperty(
+        title="S3 File Key", default="{{ $key }}")
+    # Path to file on local machine
+    file_name = StringProperty(
+        title="File to Upload", default="{{ $file_name }}")
 
     def __init__(self):
         self.client = None

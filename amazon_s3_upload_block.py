@@ -22,11 +22,14 @@ class AmazonS3Upload(Block):
         AWSCreds, title="AWS Credentials", default=AWSCreds())
 
     # Path to file on local machine
-    file_name = StringProperty(title="File to Upload", default="")
+    file_name = StringProperty(
+        title="File to Upload", default="{{ $file_name }}")
     # S3 bucket to upload to
-    bucket_name = StringProperty(title="Bucket Name", default="")
+    bucket_name = StringProperty(
+        title="Bucket Name", default="{{ $bucket_name }}")
     # What to name file in S3 bucket
-    key = StringProperty(title="S3 File Key", default="")
+    key = StringProperty(
+        title="S3 File Key", default="{{ $key }}")
 
     def __init__(self):
         self.client = None
