@@ -54,8 +54,3 @@ class AmazonS3Upload(Block):
                     self.key(signal))
             except:
                 self.logger.exception("File upload failed")
-        # self.notify_signals
-
-    # How does the relative path stuff work?
-        # How will nio access file to upload?
-    # I have no idea what the key is

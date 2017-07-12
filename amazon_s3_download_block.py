@@ -54,6 +54,3 @@ class AmazonS3Download(Block):
                     self.file_name(signal))
             except:
                 self.logger.exception("File download failed")
-        # self.notify_signals
-
-    # Once file is downloaded, then what?
