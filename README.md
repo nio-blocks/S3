@@ -1,10 +1,10 @@
-#Amazon S3
+Amazon S3
 ===========
 
 Blocks to upload/download files from Amazon S3.  You will need an AWS account
 and credentials for the block to function.
 
-##Properties
+Properties
 --------------
 **AWS Access Key**(string): Amazon credential
 **AWS Secret Access Key**(string): Amazon credential
@@ -13,18 +13,18 @@ and credentials for the block to function.
 **File Name**(string): Path and file on local machine to either upload or download
 into
 
-##Dependencies
+Dependencies
 ----------------
 boto3
 
-##Commands
+Commands
 ----------------
 None
 
-##Input
+Input
 -------
 Any list of signals with a file name, key, and bucket name.
 
-##Output
+Output
 ---------
 The downloaded file, placed in the specified path.
