@@ -1,10 +1,14 @@
 from nio.util.discovery import discoverable
-
+from nio.properties import FileProperty
 from .amazon_s3_base_block import AmazonBase
 
 
 @discoverable
 class AmazonS3Download(AmazonBase):
+
+    # Path to place file on local machine
+    file_name = FileProperty(
+        title="File to Download", default="etc/download.txt")
 
     def process_signals(self, signals):
         for signal in signals:
