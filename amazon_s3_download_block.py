@@ -8,7 +8,7 @@ class AmazonS3Download(AmazonBase):
 
     # Path to place file on local machine
     file_name = FileProperty(
-        title="File to Download", default="etc/download.txt")
+        title="Path to Download Into", default="etc/download.txt")
 
     def process_signals(self, signals):
         for signal in signals:
