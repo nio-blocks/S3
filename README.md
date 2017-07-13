@@ -7,11 +7,16 @@ and credentials for the block to function.
 Properties
 --------------
 **AWS Access Key**(string): Amazon credential
+
 **AWS Secret Access Key**(string): Amazon credential
+
 **Bucket Name**(string): S3 Bucket to interact with
+
 **File Key**(string): Name of file inside S3
+
 **File Name**(string): Path and file on local machine to either upload or download
-into  
+into
+
 
 Dependencies
 ----------------
