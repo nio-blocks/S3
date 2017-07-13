@@ -1,7 +1,7 @@
 {
-  "namespace/AmazonS3": {
-    "Language": "Python",
-    "Reference": "github.com/nio-blocks/AmazonS3@v1.0.0",
+  "nio/AmazonS3": {
+    "Language": "python",
+    "Reference": "github.com/nio-blocks/AmazonS3@v0.1.0",
     "Version": "0.1.0"
   }
 }

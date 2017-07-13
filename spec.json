@@ -1,5 +1,5 @@
 {
-  "AmazonS3/amazon_s3_upload_block": {
+  "nio/s3_block": {
     "Version": "0.1.0",
     "Description": "Uploads files on local machine to Amazon S3.",
     "Output": "No Output",
