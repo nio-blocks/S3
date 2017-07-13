@@ -11,7 +11,7 @@ Properties
 **Bucket Name**(string): S3 Bucket to interact with
 **File Key**(string): Name of file inside S3
 **File Name**(string): Path and file on local machine to either upload or download
-into
+into  
 
 Dependencies
 ----------------
