@@ -1,6 +1,6 @@
 {
   "AmazonS3/amazon_s3_upload_block": {
-    "Version": "1.0.0",
+    "Version": "0.1.0",
     "Description": "Uploads files on local machine to Amazon S3.",
     "Output": "No Output",
     "Input": "AWS credentials, file to be uploaded, S3 bucket and file key",
