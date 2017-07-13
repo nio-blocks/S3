@@ -5,6 +5,9 @@ from .amazon_s3_base_block import AmazonBase
 
 @discoverable
 class AmazonS3Upload(AmazonBase):
+    """Upload files into S3
+        User needs to specify bucket, file key in S3, and the path to which
+        file should be uploaded."""
 
     # Path to file on local machine
     file_name = FileProperty(

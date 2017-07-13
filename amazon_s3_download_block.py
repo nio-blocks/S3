@@ -5,6 +5,9 @@ from .amazon_s3_base_block import AmazonBase
 
 @discoverable
 class AmazonS3Download(AmazonBase):
+    """Download files stored in S3
+        User needs to specify bucket, file key in S3, and the path to where the
+        file should be downloaded."""
 
     # Path to place file on local machine
     file_name = FileProperty(
