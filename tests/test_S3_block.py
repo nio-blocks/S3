@@ -4,15 +4,15 @@ from nio.block.terminals import DEFAULT_TERMINAL
 from nio.signal.base import Signal
 from nio.testing.block_test_case import NIOBlockTestCase
 
-from ..amazon_s3_upload_block import AmazonS3Upload
-from ..amazon_s3_download_block import AmazonS3Download
+from ..amazon_s3_upload_block import S3Upload
+from ..amazon_s3_download_block import S3Download
 
 
-class TestAmazonS3(NIOBlockTestCase):
+class TestS3(NIOBlockTestCase):
 
     def test_upload_file(self):
         """Signals pass through block unmodified."""
-        blk = AmazonS3Upload()
+        blk = S3Upload()
         self.configure_block(blk, {"file_name": "{{ $file_name }}"})
         blk.start()
         with patch.object(blk, "client") as patched_client:
@@ -32,7 +32,7 @@ class TestAmazonS3(NIOBlockTestCase):
 
     def test_download_file(self):
         """Signals pass through block unmodified."""
-        blk = AmazonS3Download()
+        blk = S3Download()
         self.configure_block(blk, {"file_name": "{{ $file_name }}"})
         blk.start()
         with patch.object(blk, "client") as patched_client:

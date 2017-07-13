@@ -15,7 +15,7 @@ class AWSCreds(PropertyHolder):
 
 
 @not_discoverable
-class AmazonBase(Block):
+class S3Base(Block):
     """ This is the base block for integrating n.io with AWS S3"""
     version = VersionProperty('0.1.0')
     creds = ObjectProperty(
