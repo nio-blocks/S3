@@ -11,7 +11,7 @@
       "none": {
         "description": "",
         "type": ""
-      },
+      }
     },
     "Properties": {
       "aws_access_key_id": {
