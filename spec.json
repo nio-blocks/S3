@@ -1,28 +1,39 @@
 {
-  "namespace/BlockName": {
-    "Version": "1.0.0",
-    "Description": "Description of the block.",
-    "Output": "Description of block output(s).",
-    "Input": "Description of block input(s).",
+  "AmazonS3/amazon_s3_upload_block": {
+    "Version": "0.1.0",
+    "Description": "Uploads files on local machine to Amazon S3.",
+    "Output": "No Output",
+    "Input": "AWS credentials, file to be uploaded, S3 bucket and file key",
     "Dependencies": [
-      "<List of required dependencies.>"
+      "boto3"
     ],
     "Commands": {
-      "<command1>": {
-        "description": "Required description of the command",
-        "type": "Optional type and other metadata with any key."
-      },
-      "<command2>": {
-        "description": "Required description of the command"
+      "none": {
+        "description": "",
+        "type": ""
       }
     },
     "Properties": {
-      "<property1>": {
-        "description": "Required description of the property"
+      "aws_access_key_id": {
+        "description": "Amazon Access Key credential"
       },
-      "<property2>": {
-        "default": "Optional metadata with any key.",
-        "description": "Required description of the property"
+      "aws_secret_access_key": {
+        "description": "Amazon Secret Access Key credential"
+      },
+      "aws_session_token": {
+        "description": "Amazon Session Token credential"
+      },
+      "file_name": {
+        "default": "etc/upload.txt",
+        "description": "Path to file on local machine"
+      },
+      "bucket_name": {
+        "default": "{{ $bucket_name }}",
+        "description": "S3 Bucket to interact with"
+      },
+      "key": {
+        "default": "{{ $key }}",
+        "description": "File key (name) inside S3"
       }
     }
   }

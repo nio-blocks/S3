@@ -5,7 +5,6 @@ from nio.properties import (VersionProperty, PropertyHolder, StringProperty,
 from nio.util.discovery import not_discoverable
 
 
-# What is PropertyHolder?
 class AWSCreds(PropertyHolder):
     aws_access_key_id = StringProperty(
         title="Access Key ID", default="", allow_none=False)
@@ -17,14 +16,11 @@ class AWSCreds(PropertyHolder):
 
 @not_discoverable
 class AmazonBase(Block):
-    """ This is the base block for integrating n.io with AWS"""
-    version = VersionProperty('1.0.0')
+    """ This is the base block for integrating n.io with AWS S3"""
+    version = VersionProperty('0.1.0')
     creds = ObjectProperty(
         AWSCreds, title="AWS Credentials", default=AWSCreds())
 
-    # Path to file on local machine
-    file_name = FileProperty(
-        title="File to Upload", default="etc/upload.txt")
     # S3 bucket to upload to
     bucket_name = StringProperty(
         title="Bucket Name", default="{{ $bucket_name }}")
