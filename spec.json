@@ -1,5 +1,43 @@
 {
-  "nio/s3_block": {
+  "nio/S3Download": {
+    "Version": "0.1.0",
+    "Description": "Uploads files on local machine to Amazon S3.",
+    "Output": "No Output",
+    "Input": "AWS credentials, file to be uploaded, S3 bucket and file key",
+    "Dependencies": [
+      "boto3"
+    ],
+    "Commands": {
+      "none": {
+        "description": "",
+        "type": ""
+      }
+    },
+    "Properties": {
+      "aws_access_key_id": {
+        "description": "Amazon Access Key credential"
+      },
+      "aws_secret_access_key": {
+        "description": "Amazon Secret Access Key credential"
+      },
+      "aws_session_token": {
+        "description": "Amazon Session Token credential"
+      },
+      "file_name": {
+        "default": "etc/upload.txt",
+        "description": "Path to place file on local machine"
+      },
+      "bucket_name": {
+        "default": "{{ $bucket_name }}",
+        "description": "S3 Bucket to interact with"
+      },
+      "key": {
+        "default": "{{ $key }}",
+        "description": "File key (name) inside S3"
+      }
+    }
+  },
+  "nio/S3Upload": {
     "Version": "0.1.0",
     "Description": "Uploads files on local machine to Amazon S3.",
     "Output": "No Output",
