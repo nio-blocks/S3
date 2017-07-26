@@ -74,6 +74,5 @@
         "description": "File key (name) inside S3"
       }
     }
-  },
-
+  }
 }
