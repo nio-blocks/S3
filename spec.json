@@ -1,40 +1,84 @@
 {
-  "nio/s3_block": {
-    "Version": "0.1.0",
-    "Description": "Uploads files on local machine to Amazon S3.",
-    "Output": "No Output",
-    "Input": "AWS credentials, file to be uploaded, S3 bucket and file key",
-    "Dependencies": [
-      "boto3"
-    ],
-    "Commands": {
-      "none": {
-        "description": "",
-        "type": ""
-      }
-    },
-    "Properties": {
-      "aws_access_key_id": {
-        "description": "Amazon Access Key credential"
+  "nio/S3Download": {
+    "version": "0.1.0",
+    "description": "Blocks to download files from an Amazon S3 bucket.  You will need an AWS account and credentials for the block to function.",
+    "properties": {
+      "bucket_name": {
+        "title": "Bucket Name",
+        "type": "StringType",
+        "description": "S3 Bucket to interact with.",
+        "default": "{{ $bucket_name }}"
       },
-      "aws_secret_access_key": {
-        "description": "Amazon Secret Access Key credential"
-      },
-      "aws_session_token": {
-        "description": "Amazon Session Token credential"
+      "creds": {
+        "title": "AWS Credentials",
+        "type": "ObjectType",
+        "description": "AWS credentials to sign into Amazon S3 service.",
+        "default": {
+          "aws_access_key_id": "",
+          "aws_secret_access_key": "",
+          "aws_session_token": ""
+        }
       },
       "file_name": {
-        "default": "etc/upload.txt",
-        "description": "Path to file on local machine"
-      },
-      "bucket_name": {
-        "default": "{{ $bucket_name }}",
-        "description": "S3 Bucket to interact with"
+        "title": "Path to Download Into",
+        "type": "FileType",
+        "description": "Path and file on local machine to download into.",
+        "default": "etc/download.txt"
       },
       "key": {
-        "default": "{{ $key }}",
-        "description": "File key (name) inside S3"
+        "title": "S3 File Key",
+        "type": "StringType",
+        "description": "Name of file inside S3.",
+        "default": "{{ $key }}"
       }
-    }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals."
+      }
+    },
+    "outputs": {},
+    "commands": {}
+  },
+  "nio/S3Upload": {
+    "version": "0.1.0",
+    "description": "Blocks to upload files to an Amazon S3 bucket.  You will need an AWS account and credentials for the block to function.",
+    "properties": {
+      "bucket_name": {
+        "title": "Bucket Name",
+        "type": "StringType",
+        "description": "S3 Bucket to interact with.",
+        "default": "{{ $bucket_name }}"
+      },
+      "creds": {
+        "title": "AWS Credentials",
+        "type": "ObjectType",
+        "description": "AWS credentials to sign into Amazon S3 service.",
+        "default": {
+          "aws_access_key_id": "",
+          "aws_secret_access_key": "",
+          "aws_session_token": ""
+        }
+      },
+      "file_name": {
+        "title": "File to Upload",
+        "type": "FileType",
+        "description": "Path and file on local machine to upload.",
+        "default": "etc/upload.txt"
+      },
+      "key": {
+        "title": "S3 File Key",
+        "type": "StringType",
+        "description": "Name of file inside S3.",
+        "default": "{{ $key }}"
+      }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals."
+      }
+    },
+    "outputs": {},
+    "commands": {}
   }
 }

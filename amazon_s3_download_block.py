@@ -1,9 +1,8 @@
-from nio.util.discovery import discoverable
 from nio.properties import FileProperty
+
 from .amazon_s3_base_block import S3Base
 
 
-@discoverable
 class S3Download(S3Base):
     """Download files stored in S3
         User needs to specify bucket, file key in S3, and the path to where the
