@@ -1,8 +1,9 @@
 from nio.properties import FileProperty
+from nio.util.discovery import discoverable
 
 from .amazon_s3_base_block import S3Base
 
-
+@discoverable
 class S3Upload(S3Base):
     """Upload files into S3
         User needs to specify bucket, file key in S3, and the path to which
