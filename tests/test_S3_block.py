@@ -1,6 +1,5 @@
 from unittest.mock import patch
 
-from nio.block.terminals import DEFAULT_TERMINAL
 from nio.signal.base import Signal
 from nio.testing.block_test_case import NIOBlockTestCase
 
@@ -25,7 +24,8 @@ class TestS3(NIOBlockTestCase):
             patched_client.upload_file.assert_called_once_with(
                 "etc/testupload.txt",
                 "bucket.n.io",
-                "filename.css")
+                "filename.css"
+            )
 
         blk.stop()
         self.assert_num_signals_notified(0)
