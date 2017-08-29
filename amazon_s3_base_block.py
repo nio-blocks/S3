@@ -1,8 +1,7 @@
 import boto3
 
 from nio import TerminatorBlock
-from nio.properties import (VersionProperty, PropertyHolder, StringProperty,
-                            ObjectProperty)
+from nio.properties import PropertyHolder, StringProperty, ObjectProperty
 from nio.util.discovery import not_discoverable
 
 
@@ -18,7 +17,6 @@ class AWSCreds(PropertyHolder):
 @not_discoverable
 class S3Base(TerminatorBlock):
     """ This is the base block for integrating n.io with AWS S3"""
-    version = VersionProperty('0.1.0')
     creds = ObjectProperty(
         AWSCreds, title="AWS Credentials", default=AWSCreds())
 

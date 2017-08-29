@@ -1,4 +1,4 @@
-from nio.properties import FileProperty
+from nio.properties import FileProperty, VersionProperty
 from nio.util.discovery import discoverable
 
 from .amazon_s3_base_block import S3Base
@@ -13,6 +13,7 @@ class S3Download(S3Base):
     # Path to place file on local machine
     file_name = FileProperty(
         title="Path to Download Into", default="etc/download.txt")
+    version = VersionProperty('0.0.1')
 
     def process_signals(self, signals):
         for signal in signals:
