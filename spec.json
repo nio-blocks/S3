@@ -1,6 +1,6 @@
 {
   "nio/S3Download": {
-    "version": "0.1.0",
+    "version": "0.0.1",
     "description": "Blocks to download files from an Amazon S3 bucket.  You will need an AWS account and credentials for the block to function.",
     "properties": {
       "bucket_name": {
@@ -41,7 +41,7 @@
     "commands": {}
   },
   "nio/S3Upload": {
-    "version": "0.1.0",
+    "version": "0.0.1",
     "description": "Blocks to upload files to an Amazon S3 bucket.  You will need an AWS account and credentials for the block to function.",
     "properties": {
       "bucket_name": {

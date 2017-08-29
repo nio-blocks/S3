@@ -2,11 +2,11 @@
   "nio/S3Download": {
     "language": "Python",
     "url": "git://github.com/cowleyk/amazonS3.git",
-    "version": "0.1.0"
+    "version": "0.0.1"
   },
   "nio/S3Upload": {
     "language": "Python",
     "url": "git://github.com/cowleyk/amazonS3.git",
-    "version": "0.1.0"
+    "version": "0.0.1"
   }
 }
