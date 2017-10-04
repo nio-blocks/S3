@@ -13,7 +13,7 @@ class S3Upload(S3Base):
     # Path to file on local machine
     file_name = FileProperty(
         title="File to Upload", default="etc/upload.txt")
-    version = VersionProperty("0.1.0")
+    version = VersionProperty("0.1.1")
 
     def process_signals(self, signals):
         for signal in signals:

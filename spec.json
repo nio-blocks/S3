@@ -46,7 +46,7 @@
     "commands": {}
   },
   "nio/S3Upload": {
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Blocks to upload files to an Amazon S3 bucket.  You will need an AWS account and credentials for the block to function.",
     "categories": [
       "Database",
