@@ -2,7 +2,7 @@
   "nio/S3Download": {
     "language": "Python",
     "url": "git://github.com/nio-blocks/S3.git",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
   "nio/S3Upload": {
     "language": "Python",
