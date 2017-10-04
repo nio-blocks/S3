@@ -1,5 +1,6 @@
+from nio.properties import FileProperty, VersionProperty
 from nio.util.discovery import discoverable
-from nio.properties import FileProperty
+
 from .amazon_s3_base_block import S3Base
 
 
@@ -12,6 +13,7 @@ class S3Upload(S3Base):
     # Path to file on local machine
     file_name = FileProperty(
         title="File to Upload", default="etc/upload.txt")
+    version = VersionProperty("0.1.0")
 
     def process_signals(self, signals):
         for signal in signals:

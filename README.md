@@ -1,35 +1,50 @@
-Amazon S3
-===========
-
-Blocks to upload/download files from Amazon S3.  You will need an AWS account
-and credentials for the block to function.
+S3Download
+==========
+Blocks to download files from an Amazon S3 bucket.  You will need an AWS account and credentials for the block to function.
 
 Properties
---------------
-**AWS Access Key**(string): Amazon credential
+----------
+- **bucket_name**: S3 Bucket to interact with.
+- **creds**: AWS credentials to sign into Amazon S3 service.
+- **file_name**: Path and file on local machine to download into.
+- **key**: Name of file inside S3.
 
-**AWS Secret Access Key**(string): Amazon credential
+Inputs
+------
+- **default**: Any list of signals.
 
-**Bucket Name**(string): S3 Bucket to interact with
-
-**File Key**(string): Name of file inside S3
-
-**File Name**(string): Path and file on local machine to either upload or download
-into
-
-
-Dependencies
-----------------
-boto3
-
-Commands
-----------------
+Outputs
+-------
 None
 
-Input
--------
-Any list of signals with a file name, key, and bucket name.
+Commands
+--------
+None
 
-Output
----------
-The downloaded file, placed in the specified path.
+S3Upload
+========
+Blocks to upload files to an Amazon S3 bucket.  You will need an AWS account and credentials for the block to function.
+
+Properties
+----------
+- **bucket_name**: S3 Bucket to interact with.
+- **creds**: AWS credentials to sign into Amazon S3 service.
+- **file_name**: Path and file on local machine to upload.
+- **key**: Name of file inside S3.
+
+Inputs
+------
+- **default**: Any list of signals.
+
+Outputs
+-------
+None
+
+Commands
+--------
+None
+
+Dependencies
+------------
+boto3
+
